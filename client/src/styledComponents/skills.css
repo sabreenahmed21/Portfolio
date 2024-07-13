@@ -1,0 +1,21 @@
+.icon{
+  font-size: 5rem;
+}
+
+
+.skills{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr) );
+  gap: 2.1rem;
+  margin: 50px ;
+}
+
+
+.img2{
+  transform: rotate(360deg);
+  filter: blur(6px);
+  opacity: 0.6;
+}
+
+
+

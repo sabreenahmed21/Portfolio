@@ -1,0 +1,19 @@
+.img{
+  filter: blur(6px);
+  opacity: 0.6;
+  transform: rotate(180deg);
+}
+.sabreenImg{
+  z-index: -1;
+  position: absolute;
+  top: 18%;
+  left: 28%;
+  filter: opacity(0.3);
+}
+
+
+
+
+
+
+

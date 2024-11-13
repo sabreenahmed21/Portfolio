@@ -6,7 +6,7 @@ import "../styledComponents/Intro.css";
 import purple from "../assets/purple_romb1.png";
 import purplee from "../assets/Grou-removebg-preview.png";
 import { IoIosArrowForward } from "react-icons/io";
-
+import { Link } from "react-router-dom";
 
 export default function Intro() {
   return (
@@ -42,22 +42,32 @@ export default function Intro() {
                   variant="body2"
                   sx={{ textTransform: "capitalize", letterSpacing: "0.05rem" }}
                 >
-                  Resolving design problems, building smart user interfaces and
-                  useful interactions, developing rich web applications and
-                  seamless web experiences.
+                  I specialize in full-stack development with expertise in
+                  Node.js, React.js, and building interactive web applications.
+                  I also have experience in database management and CMS
+                  integration, using tools like Git and Webpack.
                 </Typography>
                 <Box>
                   <Button
                     style={{
                       color: "#9c27b0",
                       textDecoration: "none",
+                      textTransform: "capitalize",
+                      fontWeight: 900,
+                      fontSize: "1.1rem",
+                      marginTop: "1rem",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       gap: 3,
                     }}
                   >
-                    About me <IoIosArrowForward />
+                    <Link
+                      to={"/#about"}
+                      style={{ textDecoration: "none", color: "#9c27b0" }}
+                    >
+                      About me <IoIosArrowForward />
+                    </Link>
                   </Button>
                 </Box>
               </Grid>

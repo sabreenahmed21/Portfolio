@@ -1,0 +1,29 @@
+.project-card .swiper-pagination-bullet {
+  background-color: #626767 !important;
+  width: 10px !important;
+  height: 10px !important;
+  margin: 0 5px !important;
+}
+
+.project-card .swiper-pagination-bullet-active {
+  background-color: #626767 !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.project-card .swiper-pagination-bullet-active::before {
+  display: none;
+}
+
+.project-card .swiper-wrapper {
+  padding-bottom: 50px;
+}
+
+.project-card .swiper-pagination {
+  bottom: 0px !important;
+}
+
+.project-card .swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}

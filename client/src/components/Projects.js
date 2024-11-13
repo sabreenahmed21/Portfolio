@@ -50,10 +50,12 @@ export default function Projects() {
           </Typography>
           <Box>
             <Link
-              to={"https://github.com/sabreenahmed21"}
-              target="_blank"
+              to={"my-project"}
+              target="_self"
               style={{
                 color: "#9c27b0",
+                fontWeight:900,
+                fontSize:'1rem',
                 textDecoration: "none",
                 display: "flex",
                 alignItems: "center",

@@ -53,21 +53,26 @@ export default function Skills() {
               The main area of expertise is front end development (client side
               of the web).
             </Typography>
-            <Typography variant="body1" sx={{ mb: 3 }}>
-              HTML, CSS, JS, building small and medium web applications with Vue
-              or React, custom plugins, features, animations, and coding
-              interactive layouts. I have also full-stack developer experience
-              with one of the most popular open source CMS on the web -
-              WordPress
+            <Typography variant="body1" sx={{ mb: 3, textAlign:'center' }}>
+              HTML, CSS, JS, building small and medium web applications with 
+              React, custom plugins, features, animations, and coding
+              interactive layouts.
             </Typography>
             <Typography variant="body1" sx={{ mb: 3 }}>
               Visit my{" "}
+              <Link
+                to={"https://www.linkedin.com/in/sabreen-ahmed-35bb54264/"}
+                target="_blank"
+                style={{ color: "#f4a949", textDecoration: "none" }}
+              >
+                Linkedin
+              </Link>{" "},{" "}
               <Link
                 to={"https://github.com/sabreenahmed21"}
                 target="_blank"
                 style={{ color: "#f4a949", textDecoration: "none" }}
               >
-                Linkedin
+                Github
               </Link>{" "}
               for more details.
             </Typography>

@@ -56,24 +56,22 @@ export default function About() {
                 letterSpacing: "0.05rem",
               }}
             >
-              Front End Developer / JavaScript Fan / Wordpress Expert
+              Front-End Developer / JavaScript / React & TypeScript Expert
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="body2" sx={{ my: 2, fontSize: "1.03rem" }}>
-              Professionally connected with the web development industry.
+              Passionate about building interactive and responsive web
+              applications. Skilled in HTML, CSS, JavaScript, React, Next.js,
+              and TypeScript.
             </Typography>
             <Typography variant="body2" sx={{ my: 2, fontSize: "1.03rem" }}>
-              Problem solver, well-organised person, loyal employee with high
-              attention to detail.
+              Problem solver with a strong attention to detail and an organized
+              approach to development.
             </Typography>
             <Typography variant="body2" sx={{ my: 2, fontSize: "1.03rem" }}>
-              Fan of Boxing, outdoor activities, video games, and coding of
-              course.
-            </Typography>
-            <Typography variant="body2" sx={{ my: 2, fontSize: "1.03rem" }}>
-              Interested in the entire frontend spectrum and working on
-              ambitious projects with interesting people.
+              Eager to work on ambitious front-end projects with creative and
+              collaborative teams.
             </Typography>
           </Grid>
         </Grid>

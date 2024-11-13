@@ -39,55 +39,55 @@ export default function MySwiperComponent() {
   return (
     <>
       <Container>
-        <Navbar swiperRef={swiperRef} /> </Container>
-        <Swiper
-          direction={"vertical"}
-          slidesPerView={1}
-          spaceBetween={30}
-          mousewheel={true}
-          speed={1500}
-          className="mySwiper"
-          pagination={{
-            clickable: true,
-            renderBullet: (index, className) => {
-              const formattedNumber = `00${index}`.slice(-2);
-              return `<span class="${className}" title="${sections[index]}">${formattedNumber}</span>`;
-            },
-          }}
-          modules={[Mousewheel, Pagination]}
-          onSlideChange={(swiper) => updateURLHash(swiper.activeIndex)}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-            updateURLHash(swiper.activeIndex);
-          }}
-        >
-          <SwiperSlide id="home">
-            <Box className="slide-content">
-              <Intro />
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide id="about">
-            <Box className="slide-content" >
-              <About />
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide id="skills">
-            <Box className="slide-content">
-              <Skills />
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide id="projects">
-            <Box className="slide-content">
-              <Projects />
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide id="contact">
-            <Box className="slide-content">
-              <Contact />
-            </Box>
-          </SwiperSlide>
-        </Swiper>
-       
+        <Navbar swiperRef={swiperRef} />{" "}
+      </Container>
+      <Swiper
+        direction={"vertical"}
+        slidesPerView={1}
+        spaceBetween={30}
+        mousewheel={true}
+        speed={1500}
+        className="mySwiper"
+        pagination={{
+          clickable: true,
+          renderBullet: (index, className) => {
+            const formattedNumber = `00${index}`.slice(-2);
+            return `<span class="${className}" title="${sections[index]}">${formattedNumber}</span>`;
+          },
+        }}
+        modules={[Mousewheel, Pagination]}
+        onSlideChange={(swiper) => updateURLHash(swiper.activeIndex)}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+          updateURLHash(swiper.activeIndex);
+        }}
+      >
+        <SwiperSlide id="home">
+          <Box className="slide-content">
+            <Intro />
+          </Box>
+        </SwiperSlide>
+        <SwiperSlide id="about">
+          <Box className="slide-content">
+            <About />
+          </Box>
+        </SwiperSlide>
+        <SwiperSlide id="skills">
+          <Box className="slide-content">
+            <Skills />
+          </Box>
+        </SwiperSlide>
+        <SwiperSlide id="projects">
+          <Box className="slide-content">
+            <Projects />
+          </Box>
+        </SwiperSlide>
+        <SwiperSlide id="contact">
+          <Box className="slide-content">
+            <Contact />
+          </Box>
+        </SwiperSlide>
+      </Swiper>
     </>
   );
 }

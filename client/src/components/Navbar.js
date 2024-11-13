@@ -9,7 +9,7 @@ export default function Navbar({ swiperRef }) {
       console.log(swiperRef.current);
       swiperRef.current.slideTo(index);
     } else {
-      console.log('error');
+      console.log("error");
     }
   };
 
@@ -30,7 +30,7 @@ export default function Navbar({ swiperRef }) {
             fontWeight: "bold",
           }}
         >
-          <RiArrowRightSLine style={{ fontSize: "xxx-large" , color:'#000'}} />
+          <RiArrowRightSLine style={{ fontSize: "xxx-large", color: "#000" }} />
           <Box className="line"></Box>
         </Box>
         <Typography

@@ -18,14 +18,14 @@ body {
 }
 
 .mySwiper {
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 
 .slide-content {
   display: flex;
   flex-direction: column;
-  
+  justify-content: start;
   align-items: center;
   height: 100%;
 }
@@ -70,4 +70,15 @@ body {
   width: 3px;
   height: 100%;
   background-color: white;
+}
+
+@media (max-width: 992px) {
+  .swiper-vertical > .swiper-pagination-bullets,
+  .swiper-pagination-vertical.swiper-pagination-bullets {
+    right: 1rem !important;
+  }
+  .swiper-vertical > .swiper-pagination-bullets,
+  .swiper-pagination-vertical.swiper-pagination-bullets {
+    top: 40% !important;
+  }
 }

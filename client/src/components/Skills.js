@@ -25,7 +25,7 @@ export default function Skills() {
   return (
     <>
       <Container>
-        <Box>
+        <Box sx={{ mr: 6 }}>
           <Box
             sx={{
               display: "flex",
@@ -40,25 +40,44 @@ export default function Skills() {
               variant="h2"
               sx={{
                 textTransform: "capitalize",
-                mb: 3,
-                mt: 6,
-                fontSize: "3.5rem",
+                mb: { xs: 1, md: 2, lg: 3 },
+                fontSize: { xs: "1.5rem", md: "2.25rem", lg: "3.25rem" },
                 fontWeight: "bold",
                 lineHeight: 1.1,
               }}
             >
               Skills & Experience
             </Typography>
-            <Typography variant="body1" sx={{ mb: 3 }}>
+            <Typography
+              variant="body1"
+              sx={{
+                mb: { xs: 1, md: 2, lg: 3 },
+                fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                textAlign: "center"
+              }}
+            >
               The main area of expertise is front end development (client side
               of the web).
             </Typography>
-            <Typography variant="body1" sx={{ mb: 3, textAlign:'center' }}>
-              HTML, CSS, JS, building small and medium web applications with 
+            <Typography
+              variant="body1"
+              sx={{
+                mb: { xs: 1, md: 2, lg: 3 },
+                fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                textAlign: "center",
+              }}
+            >
+              HTML, CSS, JS, building small and medium web applications with
               React, custom plugins, features, animations, and coding
               interactive layouts.
             </Typography>
-            <Typography variant="body1" sx={{ mb: 3 }}>
+            <Typography
+              variant="body1"
+              sx={{
+                mb: { xs: 1, md: 2, lg: 3 },
+                fontSize: { xs: "14px", sm: "15px", md: "16px" },
+              }}
+            >
               Visit my{" "}
               <Link
                 to={"https://www.linkedin.com/in/sabreen-ahmed-35bb54264/"}
@@ -66,7 +85,8 @@ export default function Skills() {
                 style={{ color: "#f4a949", textDecoration: "none" }}
               >
                 Linkedin
-              </Link>{" "},{" "}
+              </Link>{" "}
+              ,{" "}
               <Link
                 to={"https://github.com/sabreenahmed21"}
                 target="_blank"
@@ -92,8 +112,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 Java Script
@@ -113,8 +134,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 react
@@ -134,8 +156,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 next js
@@ -155,8 +178,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 type Script
@@ -176,8 +200,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 node
@@ -197,8 +222,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 mongo DB
@@ -218,8 +244,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 RTK Query
@@ -239,8 +266,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "uppercase",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 html
@@ -260,8 +288,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "uppercase",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 css
@@ -281,8 +310,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 bootstrap
@@ -302,8 +332,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 tailwind CSS
@@ -323,8 +354,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 sass
@@ -344,8 +376,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 git
@@ -365,8 +398,9 @@ export default function Skills() {
                 sx={{
                   textTransform: "capitalize",
                   fontWeight: 500,
-                  fontSize: "1rem",
+                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
                   mt: 1,
+                  textAlign:'center'
                 }}
               >
                 figma

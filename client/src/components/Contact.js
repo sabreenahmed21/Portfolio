@@ -220,13 +220,13 @@ const ContactSection = () => {
           position: "absolute",
           bottom: 0,
           display: "flex",
-          justifyContent: "start",
+          justifyContent: "end",
         }}
       >
         <img
           src={purplee}
           alt="img"
-          className="img2"
+          className="img"
           width={"200px "}
           height={"180px"}
         />

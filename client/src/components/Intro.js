@@ -20,18 +20,20 @@ export default function Intro() {
             <Box
               sx={{
                 display: "flex",
+                flexDirection:{xs:'column-reverse', md:'row'},
                 alignItems: "center",
                 justifyContent: "center",
-                mr: 9,
+                mr: 6,
               }}
             >
               <Grid item xs={12} md={6}>
                 <Typography
                   variant="h1"
                   sx={{
+                    mt:{xs:'0.1rem', md:'0'},
                     textTransform: "capitalize",
-                    mb: "20px",
-                    fontSize: "3.5rem",
+                    mb: { xs: "15px", md: "20px" },
+                    fontSize: { xs: "1.5rem",sm:'2.5rem', md: "3.5rem" },
                     fontWeight: "bold",
                     lineHeight: 1,
                   }}
@@ -55,16 +57,23 @@ export default function Intro() {
                       textTransform: "capitalize",
                       fontWeight: 900,
                       fontSize: "1.1rem",
-                      marginTop: "1rem",
+                      marginTop: { xs: "0.8rem", md: "1rem" },
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       gap: 3,
+                      padding:0
                     }}
                   >
                     <Link
                       to={"/#about"}
-                      style={{ textDecoration: "none", color: "#9c27b0" }}
+                      style={{
+                        textDecoration: "none",
+                        color: "#9c27b0",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
                     >
                       About me <IoIosArrowForward />
                     </Link>
@@ -75,9 +84,6 @@ export default function Intro() {
                 item
                 xs={12}
                 md={6}
-                sx={{
-                  display: { xs: "none", md: "block" },
-                }}
               >
                 <img
                   alt="screen"
@@ -112,7 +118,7 @@ export default function Intro() {
           </Box>
         </Grid>
       </Container>
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%", position:'absolute', bottom:0, left:0, zIndex:-1 }}>
         <img
           src={purplee}
           alt="img"

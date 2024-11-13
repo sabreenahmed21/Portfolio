@@ -1,9 +1,9 @@
-.purplee{
+.purplee {
   filter: blur(6px);
   opacity: 0.6;
 }
 
-.dot{
+.dot {
   transform: rotate(90deg);
   position: absolute;
   top: -500px;
@@ -11,21 +11,14 @@
   z-index: -1;
 }
 
+@media (max-width: 600px) {
+  .screen {
+    max-width: 290px;
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (min-width:600px ) and (max-width: 900px) {
+  .screen {
+    max-width: 385px;
+  }
+}

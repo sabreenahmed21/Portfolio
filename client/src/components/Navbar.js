@@ -14,7 +14,7 @@ export default function Navbar({ swiperRef }) {
   };
 
   return (
-    <Box sx={{ mt: 5, display: "flex", justifyContent: "space-between" }}>
+    <Box sx={{ pt:3, pb:3, display: "flex", justifyContent: "space-between" }}>
       <Box
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >

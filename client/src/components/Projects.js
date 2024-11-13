@@ -7,68 +7,70 @@ import sphere1 from "../assets/sphere_md.png";
 import sphere3 from "../assets/sphere_sm.png";
 import sphere2 from "../assets/sphere_lg.png";
 
+import "../styledComponents/Project.css";
+
 export default function Projects() {
   return (
     <>
       <Container>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            maxWidth: "550px",
-            margin: "auto",
-            mt:'25vh'
-          }}
-        >
-          <Typography
-            variant="h2"
+        <Box mr={6}>
+          <Box
             sx={{
-              textTransform: "capitalize",
-              mb: 3,
-              fontSize: "3.5rem",
-              fontWeight: "bold",
-              lineHeight: 1.1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+              maxWidth: "550px",
+              m: "auto",
             }}
           >
-            Portfolio & Previous Projects
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 3 }}>
-            I have built various different projects to fit different aspects of
-            the client's business. If you want to see more examples of my work
-            than the ones showcased in this site, please{" "}
-            <Link
-              to={"https://www.linkedin.com/in/sabreen-ahmed-35bb54264"}
-              target="_blank"
-              style={{ color: "#f4a949", textDecoration: "none" }}
-            >
-              {" "}
-              contact me!
-            </Link>
-          </Typography>
-          <Box>
-            <Link
-              to={"my-project"}
-              target="_self"
-              style={{
-                color: "#9c27b0",
-                fontWeight:900,
-                fontSize:'1rem',
-                textDecoration: "none",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 3,
+            <Typography
+              variant="h2"
+              sx={{
+                textTransform: "capitalize",
+                mb: 3,
+                fontSize: { xs: "1.5rem", md: "2.25rem", lg: "3.25rem" },
+                fontWeight: "bold",
+                lineHeight: 1.1,
               }}
             >
-              {" "}
-              see projects <IoIosArrowForward />
-            </Link>
+              Portfolio & Previous Projects
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3 }}>
+              I have built various different projects to fit different aspects
+              of the client's business. If you want to see more examples of my
+              work than the ones showcased in this site, please{" "}
+              <Link
+                to={"https://www.linkedin.com/in/sabreen-ahmed-35bb54264"}
+                target="_blank"
+                style={{ color: "#f4a949", textDecoration: "none" }}
+              >
+                {" "}
+                contact me!
+              </Link>
+            </Typography>
+            <Box>
+              <Link
+                to={"my-project"}
+                target="_self"
+                style={{
+                  color: "#9c27b0",
+                  fontWeight: 900,
+                  fontSize: "1rem",
+                  textDecoration: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 3,
+                }}
+              >
+                {" "}
+                see projects <IoIosArrowForward />
+              </Link>
+            </Box>
           </Box>
         </Box>
-
         <Box
           sx={{
             display: "flex",

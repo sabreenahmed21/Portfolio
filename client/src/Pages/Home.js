@@ -68,7 +68,7 @@ export default function MySwiperComponent() {
           </Box>
         </SwiperSlide>
         <SwiperSlide id="about">
-          <Box className="slide-content">
+          <Box className="slide-content ">
             <About />
           </Box>
         </SwiperSlide>

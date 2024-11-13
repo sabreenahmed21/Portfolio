@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Container,
   Grid,
@@ -18,10 +18,22 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import purplee from "../assets/Grou-removebg-preview.png";
-import romb1 from "../assets/purple_romb2.png";
 import romb2 from "../assets/dark_romb.png";
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_zyina7e', 'template_z9p6tji', form.current, 'VIFtnOVIKWYpsFUaL')
+      .then((result) => {
+          console.log(result.text);
+          alert('your msg send successfully');
+      }, (error) => {
+          console.log(error.text);
+          alert("your msg wasn't received nsuccessfully");
+      });
+  };
   return (
     <>
       <Container>
@@ -131,9 +143,10 @@ const ContactSection = () => {
           </Grid>
 
           <Grid item xs={12} md={6} pr={3}>
-            <Box component="form" noValidate autoComplete="off">
+            <Box component="form" noValidate autoComplete="off"  ref={form} onSubmit={sendEmail}>
               <TextField
                 fullWidth
+                name="user_name"
                 margin="normal"
                 placeholder="Your Name"
                 variant="filled"
@@ -145,6 +158,7 @@ const ContactSection = () => {
               />
               <TextField
                 fullWidth
+                name="user_email"
                 margin="normal"
                 placeholder="Your Email"
                 variant="filled"
@@ -157,6 +171,7 @@ const ContactSection = () => {
               />
               <TextField
                 fullWidth
+                name="message"
                 margin="normal"
                 placeholder="Message"
                 variant="filled"

@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import cubic1 from "../assets/dark_cube1.png";
 import cubic2 from "../assets/dark_romb.png";
@@ -73,6 +73,20 @@ export default function About() {
               Eager to work on ambitious front-end projects with creative and
               collaborative teams.
             </Typography>
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/drive/folders/1MAczR8vPoBJtZV3X_43hnnduj5sMGuWf?usp=sharing",
+                  "_blank"
+                )
+              }
+              sx={{ p: 2, curser:'pointer', textTransform:'capitalize', fontWeight:'600' }}
+              variant="contained"
+              color="secondary"
+              size="medium"
+            >
+              Download CV
+            </Button>
           </Grid>
         </Grid>
         <Box

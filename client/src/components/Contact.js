@@ -4,9 +4,10 @@ import {
   Grid,
   TextField,
   Button,
-  Typography,
   Box,
   IconButton,
+  Typography,
+  FormHelperText,
 } from "@mui/material";
 import {
   FaMapMarkerAlt,
@@ -19,24 +20,50 @@ import {
 } from "react-icons/fa";
 import purplee from "../assets/Grou-removebg-preview.png";
 import romb2 from "../assets/dark_romb.png";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify"; 
+import 'react-toastify/dist/ReactToastify.css';
+
+import "../styledComponents/Contact.css";
 
 const ContactSection = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm(); 
   const form = useRef();
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs.sendForm('service_zyina7e', 'template_z9p6tji', form.current, 'VIFtnOVIKWYpsFUaL')
-      .then((result) => {
+
+  const sendEmail = (data) => {
+    emailjs
+      .sendForm(
+        "service_zyina7e",
+        "template_z9p6tji",
+        form.current,
+        "VIFtnOVIKWYpsFUaL"
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-          alert('your msg send successfully');
-      }, (error) => {
+          setTimeout(() => {
+            toast.success("Your message was sent successfully!");
+          }, 500);
+          reset();
+        },
+        (error) => {
           console.log(error.text);
-          alert("your msg wasn't received nsuccessfully");
-      });
+          setTimeout(() => {
+            toast.success("Your message wasn't received successfully.");
+          }, 500);
+        }
+      );
   };
+
   return (
-    <>
-      <Container>
+    <Container>
+      <Box mr={6}>
         <Grid
           container
           spacing={1}
@@ -68,7 +95,6 @@ const ContactSection = () => {
                     }}
                   />
                 </Box>
-
                 <Typography variant="body1" sx={{ color: "#f5f5f5" }}>
                   El Bagor, Al Minufiyah, Egypt
                 </Typography>
@@ -143,7 +169,13 @@ const ContactSection = () => {
           </Grid>
 
           <Grid item xs={12} md={6} pr={3}>
-            <Box component="form" noValidate autoComplete="off"  ref={form} onSubmit={sendEmail}>
+            <Box
+              component="form"
+              noValidate
+              autoComplete="off"
+              ref={form}
+              onSubmit={handleSubmit(sendEmail)} 
+            >
               <TextField
                 fullWidth
                 name="user_name"
@@ -151,11 +183,17 @@ const ContactSection = () => {
                 placeholder="Your Name"
                 variant="filled"
                 required
+                {...register("user_name", { required: "Name is required" })}
                 InputProps={{
                   style: { color: "#f5f5f5", backgroundColor: "#7777773b" },
                   disableUnderline: true,
                 }}
               />
+              {errors.user_name && (
+                <FormHelperText error>
+                  {errors.user_name.message}
+                </FormHelperText>
+              )}
               <TextField
                 fullWidth
                 name="user_email"
@@ -164,11 +202,24 @@ const ContactSection = () => {
                 variant="filled"
                 type="email"
                 required
+                {...register("user_email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
                 InputProps={{
                   style: { color: "#f5f5f5", backgroundColor: "#7777773b" },
                   disableUnderline: true,
                 }}
               />
+              {errors.user_email && (
+                <FormHelperText error>
+                  {errors.user_email.message}
+                </FormHelperText>
+              )}
+
               <TextField
                 fullWidth
                 name="message"
@@ -178,11 +229,16 @@ const ContactSection = () => {
                 multiline
                 rows={4}
                 required
+                {...register("message", { required: "Message is required" })}
                 InputProps={{
                   style: { color: "#f5f5f5", backgroundColor: "#7777773b" },
                   disableUnderline: true,
                 }}
               />
+              {errors.message && (
+                <FormHelperText error>{errors.message.message}</FormHelperText>
+              )}
+
               <Button
                 variant="contained"
                 sx={{
@@ -200,20 +256,21 @@ const ContactSection = () => {
             </Box>
           </Grid>
         </Grid>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            position: "absolute",
-            zIndex: -1,
-            bottom: "30%",
-            left: "20%",
-          }}
-        >
-          <img src={romb2} alt="img" width={"200px"} />
-        </Box>
-      </Container>
+      </Box>
+      <ToastContainer />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "start",
+          position: "absolute",
+          zIndex: -1,
+          bottom: "30%",
+          left: "20%",
+        }}
+      >
+        <img src={romb2} alt="img" width={"200px"} />
+      </Box>
       <Box
         sx={{
           width: "100%",
@@ -231,7 +288,7 @@ const ContactSection = () => {
           height={"180px"}
         />
       </Box>
-    </>
+    </Container>
   );
 };
 

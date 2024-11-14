@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   Container,
   Grid,
@@ -22,21 +22,23 @@ import purplee from "../assets/Grou-removebg-preview.png";
 import romb2 from "../assets/dark_romb.png";
 import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify"; 
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "../styledComponents/Contact.css";
 
 const ContactSection = () => {
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
-  } = useForm(); 
+    reset,
+  } = useForm();
   const form = useRef();
 
   const sendEmail = (data) => {
+    setLoading(true);
     emailjs
       .sendForm(
         "service_zyina7e",
@@ -55,10 +57,13 @@ const ContactSection = () => {
         (error) => {
           console.log(error.text);
           setTimeout(() => {
-            toast.success("Your message wasn't received successfully.");
+            toast.error("Your message wasn't sent successfully.");
           }, 500);
         }
-      );
+      )
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -174,7 +179,7 @@ const ContactSection = () => {
               noValidate
               autoComplete="off"
               ref={form}
-              onSubmit={handleSubmit(sendEmail)} 
+              onSubmit={handleSubmit(sendEmail)}
             >
               <TextField
                 fullWidth
@@ -185,7 +190,11 @@ const ContactSection = () => {
                 required
                 {...register("user_name", { required: "Name is required" })}
                 InputProps={{
-                  style: { color: "#f5f5f5", backgroundColor: "#7777773b" },
+                  style: {
+                    color: "#f5f5f5",
+                    backgroundColor: "#202020",
+                    borderRadius: "0",
+                  },
                   disableUnderline: true,
                 }}
               />
@@ -210,7 +219,11 @@ const ContactSection = () => {
                   },
                 })}
                 InputProps={{
-                  style: { color: "#f5f5f5", backgroundColor: "#7777773b" },
+                  style: {
+                    color: "#f5f5f5",
+                    backgroundColor: "#202020",
+                    borderRadius: "0",
+                  },
                   disableUnderline: true,
                 }}
               />
@@ -231,7 +244,11 @@ const ContactSection = () => {
                 required
                 {...register("message", { required: "Message is required" })}
                 InputProps={{
-                  style: { color: "#f5f5f5", backgroundColor: "#7777773b" },
+                  style: {
+                    color: "#f5f5f5",
+                    backgroundColor: "#202020",
+                    borderRadius: "0",
+                  },
                   disableUnderline: true,
                 }}
               />
@@ -243,6 +260,7 @@ const ContactSection = () => {
                 variant="contained"
                 sx={{
                   mt: 2,
+                  cursor: "pointer",
                   backgroundColor: "#f4a949b8",
                   color: "#fff",
                   "&:hover": {
@@ -251,7 +269,7 @@ const ContactSection = () => {
                 }}
                 type="submit"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </Box>
           </Grid>
@@ -265,7 +283,7 @@ const ContactSection = () => {
           justifyContent: "start",
           position: "absolute",
           zIndex: -1,
-          bottom: "30%",
+          bottom: "50%",
           left: "20%",
         }}
       >
@@ -276,7 +294,7 @@ const ContactSection = () => {
           width: "100%",
           position: "absolute",
           bottom: 0,
-          display: "flex",
+          display: { xs: "none", md: "flex" },
           justifyContent: "end",
         }}
       >

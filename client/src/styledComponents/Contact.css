@@ -1,6 +1,7 @@
-.MuiInputBase-root {
-  padding: 8px 12px !important;
+.MuiInputBase-root.MuiFilledInput-root {
+  padding: 0 !important;
 }
+
 .MuiInputBase-input {
   padding: 8px 12px !important;
 }
@@ -12,4 +13,12 @@
   .MuiInputBase-input {
     padding: 4px 6px !important;
   }
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-color: #202020 !important;
+  -webkit-box-shadow: 0 0 0 1000px #202020 inset !important;
+  -webkit-text-fill-color: #f5f5f5 !important;
+  color: #f5f5f5 !important;
 }

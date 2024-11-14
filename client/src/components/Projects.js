@@ -57,12 +57,13 @@ export default function Projects() {
                 style={{
                   color: "#9c27b0",
                   fontWeight: 900,
-                  fontSize: "1rem",
+                  fontSize: "1.1rem",
                   textDecoration: "none",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 3,
+                  textTransform:'capitalize'
                 }}
               >
                 {" "}

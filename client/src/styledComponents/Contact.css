@@ -1,7 +1,15 @@
-
-.MuiInputBase-root{
-    padding: 8px 12px !important;
+.MuiInputBase-root {
+  padding: 8px 12px !important;
 }
 .MuiInputBase-input {
   padding: 8px 12px !important;
+}
+
+@media (max-width: 600px) {
+  .MuiInputBase-root {
+    padding: 4px 6px !important;
+  }
+  .MuiInputBase-input {
+    padding: 4px 6px !important;
+  }
 }

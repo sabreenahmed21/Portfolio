@@ -2,6 +2,13 @@
   justify-content: center !important;
 }
 
+@media (max-width:600px){
+  #about .slide-content {
+    margin-top: 1rem;
+    justify-content: start !important;
+  }
+}
+
 .img {
   filter: blur(6px);
   opacity: 0.6;

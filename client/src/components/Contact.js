@@ -140,7 +140,7 @@ const ContactSection = () => {
                   sabreenahmed212@gmail.com
                 </Typography>
               </Box>
-              <Box display="flex" mt={5}>
+              <Box display="flex" mt={3}>
                 <IconButton
                   href="https://github.com/sabreenahmed21"
                   target="_blank"

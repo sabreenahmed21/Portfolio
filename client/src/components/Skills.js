@@ -40,7 +40,7 @@ export default function Skills() {
               variant="h2"
               sx={{
                 textTransform: "capitalize",
-                mb: { xs: 1, md: 2, lg: 3 },
+                mb: { xs: 1, md: 1.25, lg: 2 },
                 fontSize: { xs: "1.5rem", md: "2.25rem", lg: "3.25rem" },
                 fontWeight: "bold",
                 lineHeight: 1.1,
@@ -51,7 +51,7 @@ export default function Skills() {
             <Typography
               variant="body1"
               sx={{
-                mb: { xs: 1, md: 2, lg: 3 },
+                mb: { xs: 1, md: 1.25, lg: 2 },
                 fontSize: { xs: "14px", sm: "15px", md: "16px" },
                 textAlign: "center"
               }}
@@ -62,7 +62,7 @@ export default function Skills() {
             <Typography
               variant="body1"
               sx={{
-                mb: { xs: 1, md: 2, lg: 3 },
+                mb: { xs: 1, md: 1.25, lg: 2 },
                 fontSize: { xs: "14px", sm: "15px", md: "16px" },
                 textAlign: "center",
               }}
@@ -74,7 +74,7 @@ export default function Skills() {
             <Typography
               variant="body1"
               sx={{
-                mb: { xs: 1, md: 2, lg: 3 },
+                mb: { xs: 1, md: 1.25, lg: 2 },
                 fontSize: { xs: "14px", sm: "15px", md: "16px" },
               }}
             >

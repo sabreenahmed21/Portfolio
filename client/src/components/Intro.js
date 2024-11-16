@@ -15,7 +15,7 @@ export default function Intro() {
         <Grid container position={"relative"}>
           <Box position={"relative"}>
             <Box sx={{ display: { xs: "none", md: "block" } }}>
-              <img src={dots} alt="img" className="dot" />
+              <img src={dots} alt="img" className="dot" loading="lazy"/>
             </Box>
             <Box
               sx={{
@@ -91,6 +91,7 @@ export default function Intro() {
                   width={"100%"}
                   height={"100%"}
                   className="screen"
+                  loading="lazy"
                 />
               </Grid>
             </Box>
@@ -114,7 +115,7 @@ export default function Intro() {
               },
             }}
           >
-            <img src={purple} alt="img" width={"190px"} height={"210px"} />
+            <img src={purple} alt="img" width={"190px"} height={"210px"} loading="lazy"/>
           </Box>
         </Grid>
       </Container>
@@ -125,6 +126,7 @@ export default function Intro() {
           className="purplee"
           width={"200px "}
           height={"180px"}
+          loading="lazy"
         />
       </Box>
     </>

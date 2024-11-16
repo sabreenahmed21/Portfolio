@@ -287,7 +287,7 @@ const ContactSection = () => {
           left: "20%",
         }}
       >
-        <img src={romb2} alt="img" width={"200px"} />
+        <img src={romb2} alt="img" width={"200px"} loading="lazy"/>
       </Box>
       <Box
         sx={{
@@ -304,6 +304,7 @@ const ContactSection = () => {
           className="img"
           width={"200px "}
           height={"180px"}
+          loading="lazy"
         />
       </Box>
     </Container>

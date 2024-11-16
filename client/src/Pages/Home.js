@@ -1,17 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, lazy, Suspense } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Mousewheel, Pagination } from "swiper/modules";
-import { Box, Container } from "@mui/material";
-import Intro from "../components/Intro";
-import About from "../components/About";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
-import Contact from "../components/Contact";
-
-import { useLocation } from "react-router-dom";
+import { Container } from "@mui/material";
 import Navbar from "../components/Navbar";
+import { useLocation } from "react-router-dom";
+const Intro = lazy(() => import("../components/Intro"));
+const About = lazy(() => import("../components/About"));
+const Skills = lazy(() => import("../components/Skills"));
+const Projects = lazy(() => import("../components/Projects"));
+const Contact = lazy(() => import("../components/Contact"));
+
 
 export default function MySwiperComponent() {
   const swiperRef = useRef(null);
@@ -46,7 +46,8 @@ export default function MySwiperComponent() {
         slidesPerView={1}
         spaceBetween={30}
         mousewheel={true}
-        speed={1500}
+        speed={1000}
+        lazy={{ loadPrevNext: true }}
         className="mySwiper"
         pagination={{
           clickable: true,
@@ -56,36 +57,46 @@ export default function MySwiperComponent() {
           },
         }}
         modules={[Mousewheel, Pagination]}
-        onSlideChange={(swiper) => updateURLHash(swiper.activeIndex)}
+        onSlideChange={() => updateURLHash(swiperRef.current.activeIndex)}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           updateURLHash(swiper.activeIndex);
         }}
       >
         <SwiperSlide id="home">
-          <Box className="slide-content">
-            <Intro />
-          </Box>
+          <section className="slide-content">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Intro />
+            </Suspense>
+          </section>
         </SwiperSlide>
         <SwiperSlide id="about">
-          <Box className="slide-content ">
-            <About />
-          </Box>
+          <section className="slide-content" >
+            <Suspense fallback={<div>Loading...</div>}>
+              <About />
+            </Suspense>
+          </section>
         </SwiperSlide>
         <SwiperSlide id="skills">
-          <Box className="slide-content">
-            <Skills />
-          </Box>
+          <section className="slide-content">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Skills />
+            </Suspense>
+          </section>
         </SwiperSlide>
         <SwiperSlide id="projects">
-          <Box className="slide-content">
-            <Projects />
-          </Box>
+          <section className="slide-content">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Projects />
+            </Suspense>
+          </section>
         </SwiperSlide>
         <SwiperSlide id="contact">
-          <Box className="slide-content">
-            <Contact />
-          </Box>
+          <section className="slide-content">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Contact />
+            </Suspense>
+          </section>
         </SwiperSlide>
       </Swiper>
     </>

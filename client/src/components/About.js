@@ -28,6 +28,7 @@ export default function About() {
               src={sabreenImg}
               alt="sabreenImg"
               width={"230px"}
+              loading="lazy"
               className="sabreenImg"
             />
             <Grid item xs={12} md={5.5}>
@@ -109,7 +110,7 @@ export default function About() {
             },
           }}
         >
-          <img src={cubic1} alt="img" width={"190px"} height={"210px"} />
+          <img src={cubic1} alt="img" width={"190px"} height={"210px"} loading="lazy"/>
         </Box>
         <Box
           sx={{
@@ -120,7 +121,7 @@ export default function About() {
             right:0
           }}
         >
-          <img src={cubic2} alt="img" width={"250px"} height={"210px"} />
+          <img src={cubic2} alt="img" width={"250px"} height={"210px"} loading="lazy"/>
         </Box>
       </Container>
       <Box
@@ -138,6 +139,7 @@ export default function About() {
           className="img"
           width={"200px "}
           height={"180px"}
+          loading="lazy"
         />
       </Box>
     </>

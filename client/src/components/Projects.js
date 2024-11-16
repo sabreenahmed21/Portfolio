@@ -83,7 +83,7 @@ export default function Projects() {
             left: "30%",
           }}
         >
-          <img src={sphere3} alt="img" width={"80px"} />
+          <img src={sphere3} alt="img" width={"80px"} loading="lazy"/>
         </Box>
 
         <Box
@@ -97,7 +97,7 @@ export default function Projects() {
             right: "10%",
           }}
         >
-          <img src={sphere2} alt="img" width={"150px"} />
+          <img src={sphere2} alt="img" width={"150px"} loading="lazy"/>
         </Box>
 
         <Box
@@ -109,7 +109,7 @@ export default function Projects() {
             zIndex: -1,
           }}
         >
-          <img src={sphere1} alt="img" width={"100px"} />
+          <img src={sphere1} alt="img" width={"100px"} loading="lazy"/>
         </Box>
       </Container>
 
@@ -128,6 +128,7 @@ export default function Projects() {
           className="img"
           width={"200px "}
           height={"180px"}
+          loading="lazy"
         />
       </Box>
     </>

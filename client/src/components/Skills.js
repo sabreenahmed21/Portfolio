@@ -420,7 +420,7 @@ export default function Skills() {
             opacity: "0.5",
           }}
         >
-          <img src={romb1} alt="img" width={"120px"} />
+          <img src={romb1} alt="img" width={"120px"} loading="lazy"/>
         </Box>
         <Box
           sx={{
@@ -433,7 +433,7 @@ export default function Skills() {
             left: "20%",
           }}
         >
-          <img src={romb2} alt="img" width={"200px"} />
+          <img src={romb2} alt="img" width={"200px"} loading="lazy"/>
         </Box>
       </Container>
       <Box
@@ -451,6 +451,7 @@ export default function Skills() {
           className="img2"
           width={"200px "}
           height={"180px"}
+          loading="lazy"
         />
       </Box>
     </>

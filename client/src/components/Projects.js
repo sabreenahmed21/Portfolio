@@ -1,15 +1,25 @@
 import { Box, Container, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import purplee from "../assets/Grou-removebg-preview.png";
 import sphere1 from "../assets/sphere_md.png";
 import sphere3 from "../assets/sphere_sm.png";
 import sphere2 from "../assets/sphere_lg.png";
+import { motion } from "framer-motion"; 
 
 import "../styledComponents/Project.css";
+import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: false });
+  const [key, setKey] = useState(0);
+  useEffect(() => {
+    if (inView) {
+      setKey((prevKey) => prevKey + 1);
+    }
+  }, [inView]);
+
   return (
     <>
       <Container>
@@ -24,6 +34,7 @@ export default function Projects() {
               maxWidth: "550px",
               m: "auto",
             }}
+            ref={ref}
           >
             <Typography
               variant="h2"
@@ -63,7 +74,7 @@ export default function Projects() {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 3,
-                  textTransform:'capitalize'
+                  textTransform: "capitalize",
                 }}
               >
                 {" "}
@@ -72,6 +83,7 @@ export default function Projects() {
             </Box>
           </Box>
         </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -83,7 +95,16 @@ export default function Projects() {
             left: "30%",
           }}
         >
-          <img src={sphere3} alt="img" width={"80px"} loading="lazy"/>
+          <motion.img
+            key={key}
+            src={sphere3}
+            alt="sphere"
+            width={"80px"}
+            loading="lazy"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5 }}
+          />
         </Box>
 
         <Box
@@ -97,7 +118,16 @@ export default function Projects() {
             right: "10%",
           }}
         >
-          <img src={sphere2} alt="img" width={"150px"} loading="lazy"/>
+          <motion.img
+            key={key}
+            src={sphere2}
+            alt="sphere"
+            width={"150px"}
+            loading="lazy"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5 }}
+          />
         </Box>
 
         <Box
@@ -109,7 +139,16 @@ export default function Projects() {
             zIndex: -1,
           }}
         >
-          <img src={sphere1} alt="img" width={"100px"} loading="lazy"/>
+          <motion.img
+            key={key}
+            src={sphere1}
+            alt="sphere"
+            width={"100px"}
+            loading="lazy"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5 }}
+          />
         </Box>
       </Container>
 
@@ -126,7 +165,7 @@ export default function Projects() {
           src={purplee}
           alt="img"
           className="img"
-          width={"200px "}
+          width={"200px"}
           height={"180px"}
           loading="lazy"
         />

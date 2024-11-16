@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Container,
   Grid,
@@ -24,8 +24,10 @@ import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
 
 import "../styledComponents/Contact.css";
+import { useInView } from "react-intersection-observer";
 
 const ContactSection = () => {
   const [loading, setLoading] = useState(false);
@@ -66,9 +68,17 @@ const ContactSection = () => {
       });
   };
 
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: false });
+  const [key, setKey] = useState(0);
+  useEffect(() => {
+    if (inView) {
+      setKey((prevKey) => prevKey + 1);
+    }
+  }, [inView]);
+
   return (
     <Container>
-      <Box mr={6}>
+      <Box mr={6} ref={ref}>
         <Grid
           container
           spacing={1}
@@ -81,7 +91,12 @@ const ContactSection = () => {
           }}
         >
           <Grid item xs={12} md={6}>
-            <Box>
+            <motion.div
+              initial={{ y: 50 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1.5 }}
+              key={key}
+            >
               <Box display="flex" alignItems="center" mb={2.5}>
                 <Box
                   sx={{
@@ -170,108 +185,117 @@ const ContactSection = () => {
                   <FaFacebook />
                 </IconButton>
               </Box>
-            </Box>
+            </motion.div>
           </Grid>
 
           <Grid item xs={12} md={6} pr={3}>
-            <Box
-              component="form"
-              noValidate
-              autoComplete="off"
-              ref={form}
-              onSubmit={handleSubmit(sendEmail)}
+            <motion.div
+              initial={{ y: 50 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1.5 }}
+              key={key}
             >
-              <TextField
-                fullWidth
-                name="user_name"
-                margin="normal"
-                placeholder="Your Name"
-                variant="filled"
-                required
-                {...register("user_name", { required: "Name is required" })}
-                InputProps={{
-                  style: {
-                    color: "#f5f5f5",
-                    backgroundColor: "#202020",
-                    borderRadius: "0",
-                  },
-                  disableUnderline: true,
-                }}
-              />
-              {errors.user_name && (
-                <FormHelperText error>
-                  {errors.user_name.message}
-                </FormHelperText>
-              )}
-              <TextField
-                fullWidth
-                name="user_email"
-                margin="normal"
-                placeholder="Your Email"
-                variant="filled"
-                type="email"
-                required
-                {...register("user_email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: "Invalid email address",
-                  },
-                })}
-                InputProps={{
-                  style: {
-                    color: "#f5f5f5",
-                    backgroundColor: "#202020",
-                    borderRadius: "0",
-                  },
-                  disableUnderline: true,
-                }}
-              />
-              {errors.user_email && (
-                <FormHelperText error>
-                  {errors.user_email.message}
-                </FormHelperText>
-              )}
-
-              <TextField
-                fullWidth
-                name="message"
-                margin="normal"
-                placeholder="Message"
-                variant="filled"
-                multiline
-                rows={4}
-                required
-                {...register("message", { required: "Message is required" })}
-                InputProps={{
-                  style: {
-                    color: "#f5f5f5",
-                    backgroundColor: "#202020",
-                    borderRadius: "0",
-                  },
-                  disableUnderline: true,
-                }}
-              />
-              {errors.message && (
-                <FormHelperText error>{errors.message.message}</FormHelperText>
-              )}
-
-              <Button
-                variant="contained"
-                sx={{
-                  mt: 2,
-                  cursor: "pointer",
-                  backgroundColor: "#f4a949b8",
-                  color: "#fff",
-                  "&:hover": {
-                    backgroundColor: "#f4a94959",
-                  },
-                }}
-                type="submit"
+              <Box
+                component="form"
+                noValidate
+                autoComplete="off"
+                ref={form}
+                onSubmit={handleSubmit(sendEmail)}
               >
-                {loading ? "Sending..." : "Send Message"}
-              </Button>
-            </Box>
+                <TextField
+                  fullWidth
+                  name="user_name"
+                  margin="normal"
+                  placeholder="Your Name"
+                  variant="filled"
+                  required
+                  {...register("user_name", { required: "Name is required" })}
+                  InputProps={{
+                    style: {
+                      color: "#f5f5f5",
+                      backgroundColor: "#202020",
+                      borderRadius: "0",
+                    },
+                    disableUnderline: true,
+                  }}
+                />
+                {errors.user_name && (
+                  <FormHelperText error>
+                    {errors.user_name.message}
+                  </FormHelperText>
+                )}
+                <TextField
+                  fullWidth
+                  name="user_email"
+                  margin="normal"
+                  placeholder="Your Email"
+                  variant="filled"
+                  type="email"
+                  required
+                  {...register("user_email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                      message: "Invalid email address",
+                    },
+                  })}
+                  InputProps={{
+                    style: {
+                      color: "#f5f5f5",
+                      backgroundColor: "#202020",
+                      borderRadius: "0",
+                    },
+                    disableUnderline: true,
+                  }}
+                />
+                {errors.user_email && (
+                  <FormHelperText error>
+                    {errors.user_email.message}
+                  </FormHelperText>
+                )}
+
+                <TextField
+                  fullWidth
+                  name="message"
+                  margin="normal"
+                  placeholder="Message"
+                  variant="filled"
+                  multiline
+                  rows={4}
+                  required
+                  {...register("message", { required: "Message is required" })}
+                  InputProps={{
+                    style: {
+                      color: "#f5f5f5",
+                      backgroundColor: "#202020",
+                      borderRadius: "0",
+                    },
+                    disableUnderline: true,
+                  }}
+                />
+                {errors.message && (
+                  <FormHelperText error>
+                    {errors.message.message}
+                  </FormHelperText>
+                )}
+
+                <Button
+                  variant="contained"
+                  sx={{
+                    mt: 2,
+                    cursor: "pointer",
+                    backgroundColor: "#f4a949b8",
+                    color: "#fff",
+                    "&:hover": {
+                      backgroundColor: "#f4a94959",
+                    },
+                  }}
+                  type="submit"
+                >
+                  {loading ? "Sending..." : "Send Message"}
+                </Button>
+              </Box>
+            </motion.div>
           </Grid>
         </Grid>
       </Box>
@@ -287,7 +311,7 @@ const ContactSection = () => {
           left: "20%",
         }}
       >
-        <img src={romb2} alt="img" width={"200px"} loading="lazy"/>
+        <img src={romb2} alt="img" width={"200px"} loading="lazy" />
       </Box>
       <Box
         sx={{

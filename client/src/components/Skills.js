@@ -17,9 +17,14 @@ import { DiMongodb } from "react-icons/di";
 import { IoLogoCss3 } from "react-icons/io";
 import { RiNextjsFill } from "react-icons/ri";
 import purplee from "../assets/Grou-removebg-preview.png";
-
 import romb1 from "../assets/purple_romb2.png";
 import romb2 from "../assets/dark_romb.png";
+import { motion } from "framer-motion";
+
+const iconVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
+};
 
 export default function Skills() {
   return (
@@ -53,7 +58,7 @@ export default function Skills() {
               sx={{
                 mb: { xs: 1, md: 1.25, lg: 2 },
                 fontSize: { xs: "14px", sm: "15px", md: "16px" },
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
               The main area of expertise is front end development (client side
@@ -98,314 +103,77 @@ export default function Skills() {
             </Typography>
           </Box>
           <Box className="skills">
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <IoLogoJavascript className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
+            {[{
+              Icon: IoLogoJavascript,
+              label: "Java Script"
+            }, {
+              Icon: FaReact,
+              label: "React"
+            }, {
+              Icon: RiNextjsFill,
+              label: "Next.js"
+            }, {
+              Icon: SiTypescript,
+              label: "TypeScript"
+            }, {
+              Icon: IoLogoNodejs,
+              label: "Node"
+            }, {
+              Icon: DiMongodb,
+              label: "MongoDB"
+            }, {
+              Icon: SiReactquery,
+              label: "RTK Query"
+            }, {
+              Icon: IoLogoHtml5,
+              label: "HTML"
+            }, {
+              Icon: IoLogoCss3,
+              label: "CSS"
+            }, {
+              Icon: BsFillBootstrapFill,
+              label: "Bootstrap"
+            }, {
+              Icon: RiTailwindCssFill,
+              label: "Tailwind CSS"
+            }, {
+              Icon: IoLogoSass,
+              label: "Sass"
+            }, {
+              Icon: FaGitAlt,
+              label: "Git"
+            }, {
+              Icon: IoLogoFigma,
+              label: "Figma"
+            }].map(({ Icon, label }, index) => (
+              <motion.div
+                key={index}
+                variants={iconVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.9 }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexDirection: "column",
                 }}
               >
-                Java Script
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <FaReact className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                react
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <RiNextjsFill className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                next js
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <SiTypescript className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                type Script
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <IoLogoNodejs className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                node
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <DiMongodb className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                mongo DB
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <SiReactquery className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                RTK Query
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <IoLogoHtml5 className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                html
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <IoLogoCss3 className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "uppercase",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                css
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <BsFillBootstrapFill className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                bootstrap
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <RiTailwindCssFill className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                tailwind CSS
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <IoLogoSass className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                sass
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <FaGitAlt className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                git
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-              }}
-            >
-              <IoLogoFigma className="icon" />
-              <Typography
-                variant="body2"
-                sx={{
-                  textTransform: "capitalize",
-                  fontWeight: 500,
-                  fontSize: {xs:'0.7rem',sm:'0.8rem', md:'0.9rem' ,lg:'1rem'},
-                  mt: 1,
-                  textAlign:'center'
-                }}
-              >
-                figma
-              </Typography>
-            </Box>
+                <Icon className="icon" />
+                <Typography
+                  variant="body2"
+                  sx={{
+                    textTransform: "capitalize",
+                    fontWeight: 500,
+                    fontSize: { xs: "0.7rem", sm: "0.8rem", md: "0.9rem", lg: "1rem" },
+                    mt: 1,
+                    textAlign: "center",
+                  }}
+                >
+                  {label}
+                </Typography>
+              </motion.div>
+            ))}
           </Box>
         </Box>
         <Box
@@ -420,7 +188,7 @@ export default function Skills() {
             opacity: "0.5",
           }}
         >
-          <img src={romb1} alt="img" width={"120px"} loading="lazy"/>
+          <img src={romb1} alt="img" width={"120px"} loading="lazy" />
         </Box>
         <Box
           sx={{
@@ -433,7 +201,7 @@ export default function Skills() {
             left: "20%",
           }}
         >
-          <img src={romb2} alt="img" width={"200px"} loading="lazy"/>
+          <img src={romb2} alt="img" width={"200px"} loading="lazy" />
         </Box>
       </Container>
       <Box

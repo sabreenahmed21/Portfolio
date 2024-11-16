@@ -157,7 +157,7 @@ export default function Projects() {
           width: "100%",
           position: "absolute",
           bottom: 0,
-          display: "flex",
+          display: { xs: "none", md: "flex" },
           justifyContent: "end",
         }}
       >

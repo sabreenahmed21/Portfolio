@@ -152,7 +152,7 @@ export default function About() {
           src={cubic1}
           alt="img"
           width={"190px"}
-          height={"210px"}
+          height={"170px"}
           loading="lazy"
           variants={floatAnimation}
           animate="visible"
@@ -174,8 +174,8 @@ export default function About() {
           width={"250px"}
           height={"210px"}
           loading="lazy"
-          variants={floatAnimation}
-          animate="visible"
+          // variants={floatAnimation}
+          // animate="visible"
           key={key}
         />
       </Box>

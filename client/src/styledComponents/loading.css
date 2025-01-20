@@ -1,0 +1,29 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* يجعل الحاوية تغطي كامل الصفحة */
+  width: 100%; /* عرض الحاوية */
+}
+
+.loader {
+  width: 100px;
+  padding: 18px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ffffff; 
+  --_m: 
+    conic-gradient(#0000 10%, #fff), 
+    linear-gradient(#fff 0 0) content-box; 
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, lazy, Suspense } from "react";
+import "../styledComponents/loading.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,7 +12,6 @@ const About = lazy(() => import("../components/About"));
 const Skills = lazy(() => import("../components/Skills"));
 const Projects = lazy(() => import("../components/Projects"));
 const Contact = lazy(() => import("../components/Contact"));
-
 
 export default function MySwiperComponent() {
   const swiperRef = useRef(null);
@@ -65,35 +65,65 @@ export default function MySwiperComponent() {
       >
         <SwiperSlide id="home">
           <section className="slide-content">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="loader-container">
+                  <div className="loader"></div>
+                </div>
+              }
+            >
               <Intro />
             </Suspense>
           </section>
         </SwiperSlide>
         <SwiperSlide id="about">
-          <section className="slide-content" >
-            <Suspense fallback={<div>Loading...</div>}>
+          <section className="slide-content">
+            <Suspense
+              fallback={
+                <div className="loader-container">
+                  <div className="loader"></div>
+                </div>
+              }
+            >
               <About />
             </Suspense>
           </section>
         </SwiperSlide>
         <SwiperSlide id="skills">
           <section className="slide-content">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="loader-container">
+                  <div className="loader"></div>
+                </div>
+              }
+            >
               <Skills />
             </Suspense>
           </section>
         </SwiperSlide>
         <SwiperSlide id="projects">
           <section className="slide-content">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="loader-container">
+                  <div className="loader"></div>
+                </div>
+              }
+            >
               <Projects />
             </Suspense>
           </section>
         </SwiperSlide>
         <SwiperSlide id="contact">
           <section className="slide-content">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="loader-container">
+                  <div className="loader"></div>
+                </div>
+              }
+            >
               <Contact />
             </Suspense>
           </section>

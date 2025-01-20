@@ -1,5 +1,5 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import screen from "../assets/screen-removebg.png";
 import dots from "../assets/side-dots.png";
 import "../styledComponents/Intro.css";
@@ -11,8 +11,8 @@ import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 
 const fadeIn = {
-  hidden: {  y: 30 },
-  visible: {  y: 0, transition: { duration: 1.5 } },
+  hidden: { y: 30 },
+  visible: { y: 0, transition: { duration: 1.5 } },
 };
 
 const floatAnimation = {
@@ -31,7 +31,7 @@ export default function Intro() {
   const [key, setKey] = useState(0);
   useEffect(() => {
     if (inView) {
-      setKey(prevKey => prevKey + 1); 
+      setKey((prevKey) => prevKey + 1);
     }
   }, [inView]);
 
@@ -46,16 +46,28 @@ export default function Intro() {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: { xs: "column-reverse", md: "row" },
+                flexDirection: { xs: "column", md: "row-reverse" },
                 alignItems: "center",
                 justifyContent: "center",
                 mr: 6,
               }}
-              ref={ref} 
+              ref={ref}
             >
               <Grid item xs={12} md={6}>
+                <motion.img
+                  alt="screen"
+                  src={screen}
+                  width={"100%"}
+                  height={"100%"}
+                  className="screen"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1 }}
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
                 <motion.div
-                  key={key} 
+                  key={key}
                   initial="hidden"
                   animate="visible"
                   variants={fadeIn}
@@ -78,7 +90,7 @@ export default function Intro() {
                     sx={{
                       textTransform: "capitalize",
                       letterSpacing: "0.05rem",
-                      mb:'0.5rem'
+                      mb: "0.5rem",
                     }}
                   >
                     I specialize in full-stack development with expertise in
@@ -118,19 +130,6 @@ export default function Intro() {
                   </Box>
                 </motion.div>
               </Grid>
-              <Grid item xs={12} md={6}>
-                <motion.img
-                  alt="screen"
-                  src={screen}
-                  width={"100%"}
-                  height={"100%"}
-                  className="screen"
-                  loading="lazy"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1 }}
-                />
-              </Grid>
             </Box>
           </Box>
 
@@ -142,6 +141,7 @@ export default function Intro() {
               bottom: "-50px",
               zIndex: -1,
               opacity: 0.7,
+              display: { xs: "none", md: "block" },
             }}
           >
             <motion.img
@@ -150,9 +150,9 @@ export default function Intro() {
               width={"190px"}
               height={"210px"}
               loading="lazy"
-              variants={floatAnimation}
-              animate="animate"
-              key={key} 
+              //variants={floatAnimation}
+              //animate="animate"
+              key={key}
             />
           </Box>
         </Grid>

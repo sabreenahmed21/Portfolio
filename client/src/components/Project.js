@@ -17,6 +17,8 @@ import hoo from "../assets/hoo.png";
 import sa from "../assets/sa.png";
 import medical from "../assets/medical.png";
 import bazaar from "../assets/bazaar.png";
+import taskManager from "../assets/task-manager.png";
+
 import {
   FaArrowAltCircleLeft,
   FaArrowAltCircleRight,
@@ -32,8 +34,16 @@ const projects = [
   {
     title: "E-commerce Clothing Store",
     built:
-      " React, Node.js, Mui, React-hook-form, i18next, Express, MongoDB, jsonwebtoken, Nodemailer, cloudinary, stripe",
+      "React, Node.js, Mui, React-hook-form, i18next, Express, MongoDB, jsonwebtoken, Nodemailer, cloudinary, stripe",
     imageUrl: bazaar,
+    demoLink: "https://task-manager-six-snowy.vercel.app/",
+    codeLink: "https://github.com/sabreenahmed21/task-manager",
+  },
+  {
+    title: "Task Manager Website",
+    built:
+      "Next.js, Prisma, Tailwind CSS, TypeScript, React-hook-form, MongoDB, jsonwebtoken, Nodemailer",
+    imageUrl: taskManager,
     demoLink: "https://bazaar-main.onrender.com/",
     codeLink: "https://github.com/sabreenahmed21/Bazaar-main",
   },
@@ -52,28 +62,28 @@ const projects = [
     codeLink: "https://github.com/sabreenahmed21/Movix",
   },
   {
-    title: "Medical Site",
+    title: "Medical Website",
     built: "React, Bootstrap",
     imageUrl: medical,
     demoLink: "https://medical-site-nu.vercel.app/",
     codeLink: "https://github.com/sabreenahmed21/Medical-site",
   },
   {
-    title: "HooBank",
+    title: "HooBank Website",
     built: " React , Tailwind CSS",
     imageUrl: hoo,
     demoLink: "https://tailwind-kappa-ten.vercel.app/",
     codeLink: "https://github.com/sabreenahmed21/HooBank",
   },
   {
-    title: "SA. Company",
+    title: "SA. Company Website",
     built: "Js, Sass, Bootstrap",
     imageUrl: sa,
     demoLink: "https://sa-campany.vercel.app/",
     codeLink: "https://github.com/sabreenahmed21/SA.-Campany",
   },
   {
-    title: "Home Company",
+    title: "Home Company Website",
     built: "Js, Css, Bootstrap",
     imageUrl: home,
     demoLink: "https://home-company-one.vercel.app/#",

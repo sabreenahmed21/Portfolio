@@ -36,16 +36,16 @@ const projects = [
     built:
       "React, Node.js, Mui, React-hook-form, i18next, Express, MongoDB, jsonwebtoken, Nodemailer, cloudinary, stripe",
     imageUrl: bazaar,
-    demoLink: "https://task-manager-six-snowy.vercel.app/",
-    codeLink: "https://github.com/sabreenahmed21/task-manager",
+    demoLink: "https://bazaar-main.onrender.com/",
+    codeLink: "https://github.com/sabreenahmed21/Bazaar-main",
   },
   {
     title: "Task Manager Website",
     built:
       "Next.js, Prisma, Tailwind CSS, TypeScript, React-hook-form, MongoDB, jsonwebtoken, Nodemailer",
     imageUrl: taskManager,
-    demoLink: "https://bazaar-main.onrender.com/",
-    codeLink: "https://github.com/sabreenahmed21/Bazaar-main",
+    demoLink: "https://task-manager-six-snowy.vercel.app/",
+    codeLink: "https://github.com/sabreenahmed21/task-manager",
   },
   {
     title: "Disney plus clone",

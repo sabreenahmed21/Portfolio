@@ -94,7 +94,7 @@ export default function About() {
                     letterSpacing: "0.05rem",
                   }}
                 >
-                  Front-End Developer / JavaScript / React & TypeScript Expert
+                  Front-End Developer / JavaScript / React / Next & TypeScript Expert
                 </Typography>
               </motion.div>
             </Grid>
@@ -106,8 +106,17 @@ export default function About() {
                   Next.js, and TypeScript.
                 </Typography>
                 <Typography variant="body2" sx={{ my: 2, fontSize: "1.03rem" }}>
-                  Problem solver with a strong attention to detail and an
-                  organized approach to development.
+                  Contributed to building a full-featured real estate platform with
+                  AI-powered features, dynamic ads system, SEO optimization, secure
+                  authentication, real-time chat, advanced search and filtering,
+                  notifications system, and Progressive Web App (PWA) support for enhanced
+                  performance and accessibility.
+                </Typography>
+                <Typography variant="body2" sx={{ my: 2, fontSize: "1.03rem" }}>
+                  Integrated Google Search Console to enhance search visibility, monitor
+                  indexing status, and optimize SEO performance. I also configured Sentry
+                  for real-time error tracking and performance monitoring, helping maintain
+                  application stability and quickly resolve production issues.
                 </Typography>
                 <Typography variant="body2" sx={{ my: 2, fontSize: "1.03rem" }}>
                   Eager to work on ambitious front-end projects with creative

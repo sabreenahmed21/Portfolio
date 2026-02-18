@@ -9,7 +9,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi";
 
 import "../styledComponents/ProjectCard.css";
-
+import Padviser from "../assets/p-adviser.png"
 import desny from "../assets/desny.png";
 import movix from "../assets/movix.png";
 import home from "../assets/home.png";
@@ -31,6 +31,13 @@ import sphere2 from "../assets/sphere_lg.png";
 import { Link } from "react-router-dom";
 
 const projects = [
+  {
+    title: "P-adviser realestate",
+    built:
+      "Next, Typescript",
+    imageUrl: Padviser,
+    demoLink: "https://p-adviser.com",
+  },
   {
     title: "E-commerce Clothing Store",
     built:
@@ -212,25 +219,27 @@ const ProjectSlider = () => {
                       </Typography>
 
                       <Box>
-                        <Button
-                          size="small"
-                          color="primary"
-                          href={project.codeLink}
-                          target="_blank"
-                          startIcon={<AiFillGithub />}
-                          sx={{
-                            p: 1,
-                            mt: 1,
-                            backgroundColor: "#333",
-                            color: "#fff",
-                            "&:hover": {
-                              backgroundColor: "#555",
-                            },
-                            marginRight: 2,
-                          }}
-                        >
-                          View the code
-                        </Button>
+                        {project.codeLink && (
+                          <Button
+                            size="small"
+                            color="primary"
+                            href={project.codeLink}
+                            target="_blank"
+                            startIcon={<AiFillGithub />}
+                            sx={{
+                              p: 1,
+                              mt: 1,
+                              backgroundColor: "#333",
+                              color: "#fff",
+                              "&:hover": {
+                                backgroundColor: "#555",
+                              },
+                              marginRight: 2,
+                            }}
+                          >
+                            View the code
+                          </Button>
+                        )}
                         <Button
                           size="small"
                           color="primary"

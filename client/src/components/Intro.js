@@ -83,7 +83,7 @@ export default function Intro() {
                       lineHeight: 1,
                     }}
                   >
-                    MERN-Stack Developer
+                    Frontend Developer
                   </Typography>
                   <Typography
                     variant="body2"
@@ -93,10 +93,7 @@ export default function Intro() {
                       mb: "0.5rem",
                     }}
                   >
-                    I specialize in full-stack development with expertise in
-                    Node.js, React.js, and building interactive web
-                    applications. I also have experience in database management
-                    and CMS integration, using tools like Git and Webpack.
+                    I’m a Front-End Developer specializing in React, Next.js, and TypeScript, focused on building responsive, high-performance, and user-centered web applications.
                   </Typography>
                   <Box>
                     <Button

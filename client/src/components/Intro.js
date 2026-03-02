@@ -15,17 +15,6 @@ const fadeIn = {
   visible: { y: 0, transition: { duration: 1.5 } },
 };
 
-const floatAnimation = {
-  animate: {
-    y: [0, -20, 0],
-    transition: {
-      duration: 6,
-      ease: "easeInOut",
-      repeat: Infinity,
-    },
-  },
-};
-
 export default function Intro() {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: false });
   const [key, setKey] = useState(0);

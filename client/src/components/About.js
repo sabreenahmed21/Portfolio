@@ -123,12 +123,10 @@ export default function About() {
                   and collaborative teams.
                 </Typography>
                 <Button
-                  onClick={() =>
-                    window.open(
-                      "https://drive.google.com/drive/folders/1MAczR8vPoBJtZV3X_43hnnduj5sMGuWf?usp=sharing",
-                      "_blank"
-                    )
-                  }
+                  component="a"
+  href="/file/Sabreen_Ahmed.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
                   sx={{
                     p: 2,
                     cursor: "pointer",

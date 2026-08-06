@@ -134,7 +134,7 @@ const ContactSection = () => {
                   <FaPhoneAlt style={{ color: "#f5f5f5" }} />
                 </Box>
                 <Typography variant="body1" sx={{ color: "#f5f5f5" }}>
-                  +02 01097438046
+                  +02 01038674267
                 </Typography>
               </Box>
               <Box display="flex" alignItems="center" mb={2.5}>
@@ -171,18 +171,11 @@ const ContactSection = () => {
                   <FaLinkedin />
                 </IconButton>
                 <IconButton
-                  href="https://wa.me/201097438046"
+                  href="https://wa.me/201038674267"
                   target="_blank"
                   sx={{ color: "#f5f5f5" }}
                 >
                   <FaWhatsapp />
-                </IconButton>
-                <IconButton
-                  href="https://web.facebook.com/sabreen.ahmed.127201"
-                  target="_blank"
-                  sx={{ color: "#f5f5f5" }}
-                >
-                  <FaFacebook />
                 </IconButton>
               </Box>
             </motion.div>

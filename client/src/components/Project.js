@@ -39,29 +39,6 @@ const projects = [
     demoLink: "https://p-adviser.com",
   },
   {
-    title: "E-commerce Clothing Store",
-    built:
-      "React, Node.js, Mui, React-hook-form, i18next, Express, MongoDB, jsonwebtoken, Nodemailer, cloudinary, stripe",
-    imageUrl: bazaar,
-    demoLink: "https://bazaar-main.onrender.com/",
-    codeLink: "https://github.com/sabreenahmed21/Bazaar-main",
-  },
-  {
-    title: "Task Manager Website",
-    built:
-      "Next.js, Prisma, Tailwind CSS, TypeScript, React-hook-form, MongoDB, jsonwebtoken, Nodemailer",
-    imageUrl: taskManager,
-    demoLink: "https://task-manager-six-snowy.vercel.app/",
-    codeLink: "https://github.com/sabreenahmed21/task-manager",
-  },
-  {
-    title: "Disney plus clone",
-    built: "React , Firebase",
-    imageUrl: desny,
-    demoLink: "https://disney-plus-clone-six-sand.vercel.app/home",
-    codeLink: "https://github.com/sabreenahmed21/DisneyPlus-Clone",
-  },
-  {
     title: "Movix Website",
     built: "React + Vite",
     imageUrl: movix,
@@ -69,12 +46,35 @@ const projects = [
     codeLink: "https://github.com/sabreenahmed21/Movix",
   },
   {
-    title: "Medical Website",
-    built: "React, Bootstrap",
-    imageUrl: medical,
-    demoLink: "https://medical-site-nu.vercel.app/",
-    codeLink: "https://github.com/sabreenahmed21/Medical-site",
+    title: "E-commerce Clothing Store",
+    built:
+      "React, Node.js, Mui, React-hook-form, i18next, Express, MongoDB, jsonwebtoken, Nodemailer, cloudinary, stripe",
+    imageUrl: bazaar,
+    demoLink: "https://bazaar-main.onrender.com/",
+    codeLink: "https://github.com/sabreenahmed21/Bazaar-main",
   },
+  // {
+  //   title: "Task Manager Website",
+  //   built:
+  //     "Next.js, Prisma, Tailwind CSS, TypeScript, React-hook-form, MongoDB, jsonwebtoken, Nodemailer",
+  //   imageUrl: taskManager,
+  //   demoLink: "https://task-manager-six-snowy.vercel.app/",
+  //   codeLink: "https://github.com/sabreenahmed21/task-manager",
+  // },
+  // {
+  //   title: "Disney plus clone",
+  //   built: "React , Firebase",
+  //   imageUrl: desny,
+  //   demoLink: "https://disney-plus-clone-six-sand.vercel.app/home",
+  //   codeLink: "https://github.com/sabreenahmed21/DisneyPlus-Clone",
+  // },
+  // {
+  //   title: "Medical Website",
+  //   built: "React, Bootstrap",
+  //   imageUrl: medical,
+  //   demoLink: "https://medical-site-nu.vercel.app/",
+  //   codeLink: "https://github.com/sabreenahmed21/Medical-site",
+  // },
   {
     title: "HooBank Website",
     built: " React , Tailwind CSS",
@@ -89,13 +89,13 @@ const projects = [
     demoLink: "https://sa-campany.vercel.app/",
     codeLink: "https://github.com/sabreenahmed21/SA.-Campany",
   },
-  {
-    title: "Home Company Website",
-    built: "Js, Css, Bootstrap",
-    imageUrl: home,
-    demoLink: "https://home-company-one.vercel.app/#",
-    codeLink: "https://github.com/sabreenahmed21/home-company",
-  },
+  // {
+  //   title: "Home Company Website",
+  //   built: "Js, Css, Bootstrap",
+  //   imageUrl: home,
+  //   demoLink: "https://home-company-one.vercel.app/#",
+  //   codeLink: "https://github.com/sabreenahmed21/home-company",
+  // },
 ];
 
 const ProjectSlider = () => {
